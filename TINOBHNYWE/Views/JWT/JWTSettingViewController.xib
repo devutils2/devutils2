@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="JWTSettingViewController" customModule="DevUtils2" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H9O-PW-Bch">
+                    <rect key="frame" x="18" y="59" width="444" height="18"/>
+                    <buttonCell key="cell" type="check" title="Auto detect when input is a well formed JWT token" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="g6u-KN-hOH">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="2mV-r8-ODW" name="value" keyPath="values.jwt-auto-detect-well-formed" id="LeZ-QO-LzC"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U5Y-85-1J7">
+                    <rect key="frame" x="14" y="13" width="144" height="32"/>
+                    <buttonCell key="cell" type="push" title="Reset to Defaults" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mb8-dQ-RhN">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="resetToDefaultsButtonAction:" target="-2" id="nsf-YQ-8dx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="U5Y-85-1J7" firstAttribute="top" secondItem="H9O-PW-Bch" secondAttribute="bottom" constant="20" id="IMu-1R-CRX"/>
+                <constraint firstAttribute="bottom" secondItem="U5Y-85-1J7" secondAttribute="bottom" constant="20" id="MTb-m7-lcQ"/>
+                <constraint firstItem="H9O-PW-Bch" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="a8x-Dc-bFG"/>
+                <constraint firstAttribute="trailing" secondItem="H9O-PW-Bch" secondAttribute="trailing" constant="20" id="cbt-Ss-UGM"/>
+                <constraint firstItem="U5Y-85-1J7" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="l9c-C3-tF7"/>
+                <constraint firstItem="H9O-PW-Bch" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="m0Y-vb-yVj"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="2mV-r8-ODW"/>
+    </objects>
+</document>

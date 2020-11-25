@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="URLEncodeSettingViewController" customModule="DevUtils2" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="197"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="49M-6D-8Pg">
+                    <rect key="frame" x="18" y="161" width="444" height="18"/>
+                    <buttonCell key="cell" type="check" title="Auto detect when input contains characters that can be decoded" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EMi-ES-eOR">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="optionsChangedAction:" target="-2" id="JY1-HV-UB2"/>
+                        <binding destination="SwD-4L-qwe" name="value" keyPath="values.url-encode-auto-activate-decode" id="hnu-rK-C7Q"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FOf-aq-ePg">
+                    <rect key="frame" x="14" y="13" width="156" height="32"/>
+                    <buttonCell key="cell" type="push" title="Restore to Defaults" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qWf-f5-Up8">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="resetButtonAction:" target="-2" id="pLY-Zn-Mor"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c42-mI-CjH">
+                    <rect key="frame" x="18" y="127" width="102" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Encode options:" id="yQ6-YT-QBr">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button identifier="rfc3986" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ECW-zD-MhN">
+                    <rect key="frame" x="19" y="102" width="139" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="radio" title="RFC3986 Standard" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="hfF-21-O7r">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="optionsChangedAction:" target="-2" id="TNE-3r-L4f"/>
+                        <binding destination="SwD-4L-qwe" name="value" keyPath="values.url-encode-options-rfc3986" id="Haq-DD-zUj">
+                            <dictionary key="options">
+                                <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="0"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button identifier="formData" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMk-xq-uNs">
+                    <rect key="frame" x="19" y="80" width="86" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="radio" title="Form Data" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Eif-F4-Q2E">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="optionsChangedAction:" target="-2" id="jdA-OP-BOE"/>
+                        <binding destination="SwD-4L-qwe" name="value" keyPath="values.url-encode-options-form-data" id="mEd-8r-RBF"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enM-x6-LEN">
+                    <rect key="frame" x="39" y="57" width="192" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Use plus sign (+) for spaces" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="CTI-nR-qzV">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="optionsChangedAction:" target="-2" id="w8a-Aj-xa6"/>
+                        <binding destination="SwD-4L-qwe" name="enabled" keyPath="values.url-encode-options-form-data" id="FZ5-4n-wPe"/>
+                        <binding destination="SwD-4L-qwe" name="value" keyPath="values.url-encode-options-plus-for-space" id="wKT-BU-I37"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="c42-mI-CjH" firstAttribute="top" secondItem="49M-6D-8Pg" secondAttribute="bottom" constant="20" id="Fkl-hN-aRP"/>
+                <constraint firstAttribute="trailing" secondItem="49M-6D-8Pg" secondAttribute="trailing" constant="20" id="KFQ-L7-FFT"/>
+                <constraint firstItem="FOf-aq-ePg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="NQd-hw-u6e"/>
+                <constraint firstItem="c42-mI-CjH" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="QTQ-Jp-l8i"/>
+                <constraint firstItem="49M-6D-8Pg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="TOT-P3-yZE"/>
+                <constraint firstItem="49M-6D-8Pg" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="o1k-CK-6hK"/>
+                <constraint firstAttribute="bottom" secondItem="FOf-aq-ePg" secondAttribute="bottom" constant="20" id="osv-hE-eWs"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="249.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="SwD-4L-qwe"/>
+    </objects>
+</document>

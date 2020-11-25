@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="mAU-3z-TcK">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="ALa-Gu-ofP">
+            <objects>
+                <windowController storyboardIdentifier="PreferencesWindow" id="mAU-3z-TcK" customClass="PreferencesWindowController" customModule="DevUtils2" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="BDi-ca-haX" customClass="PreferenceWindow" customModule="DevUtils2" customModuleProvider="target">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <rect key="contentRect" x="604" y="461" width="368" height="167"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3440" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="mAU-3z-TcK" id="Es3-BL-c08"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="6HZ-ko-cfY" kind="relationship" relationship="window.shadowedContentViewController" id="ALX-JH-gNy"/>
+                    </connections>
+                </windowController>
+                <customObject id="0Bu-cz-0Fr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52" y="-70.5"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="uFr-gL-EZf">
+            <objects>
+                <viewController id="6HZ-ko-cfY" customClass="PreferencesViewController" customModule="DevUtils2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="N7o-5c-FHd">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="454"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box borderType="line" title="App settings" translatesAutoresizingMaskIntoConstraints="NO" id="Cuw-FZ-7s3">
+                                <rect key="frame" x="17" y="230" width="386" height="204"/>
+                                <view key="contentView" id="ZMd-yk-FEh">
+                                    <rect key="frame" x="3" y="3" width="380" height="186"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PC2-8W-HDa">
+                                            <rect key="frame" x="18" y="116" width="344" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Show Dock Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MYf-MR-w8z">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="showDockIconAction:" target="6HZ-ko-cfY" id="Lnt-EY-PbH"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jna-2L-IaX">
+                                            <rect key="frame" x="18" y="82" width="344" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Show Status Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qhp-94-sWv">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="showStatusIconAction:" target="6HZ-ko-cfY" id="Gl1-Dw-6ng"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-Jg-36U">
+                                            <rect key="frame" x="18" y="150" width="344" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UuJ-Fh-KMO">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="launchAtLoginAction:" target="6HZ-ko-cfY" id="2Fj-n8-9sb"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YRI-aK-1Qg">
+                                            <rect key="frame" x="18" y="48" width="217" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="o53-SW-8hS">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="emr-Ku-gbi" name="value" keyPath="automaticallyChecksForUpdates" id="fLc-wn-22o"/>
+                                            </connections>
+                                        </button>
+                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-ov-AJ6">
+                                            <rect key="frame" x="239" y="44" width="87" height="25"/>
+                                            <popUpButtonCell key="cell" type="push" title="Hourly" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="3600" imageScaling="proportionallyDown" inset="2" selectedItem="33c-q6-Aj4" id="a7y-8Z-PDU">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="0Lz-xx-qwl">
+                                                    <items>
+                                                        <menuItem title="Hourly" state="on" tag="3600" id="33c-q6-Aj4"/>
+                                                        <menuItem title="Daily" tag="86400" id="cl5-3S-mq5"/>
+                                                        <menuItem title="Weekly" tag="604800" id="vgt-JK-80d"/>
+                                                        <menuItem title="Monthly" tag="2629800" id="Si7-E9-iQq">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="emr-Ku-gbi" name="enabled" keyPath="automaticallyChecksForUpdates" id="UfK-gO-mCu"/>
+                                                <binding destination="emr-Ku-gbi" name="selectedTag" keyPath="updateCheckInterval" id="ZeZ-Ry-isN"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Irs-sZ-FjY">
+                                            <rect key="frame" x="18" y="14" width="126" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Write debug logs" bezelStyle="regularSquare" imagePosition="left" inset="2" id="v2I-SC-XoV">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="writeDebugLogsCheckboxAction:" target="6HZ-ko-cfY" id="BqA-WE-fxM"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cw-6Z-6Vc">
+                                            <rect key="frame" x="145" y="8" width="130" height="27"/>
+                                            <buttonCell key="cell" type="push" title="Open logs directory" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="glc-s8-tox">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="openLogsDirButtonAction:" target="6HZ-ko-cfY" id="6WC-Y1-hab"/>
+                                            </connections>
+                                        </button>
+                                        <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5bw-FU-IV4">
+                                            <rect key="frame" x="331" y="48" width="21" height="17"/>
+                                            <buttonCell key="cell" type="recessed" title="?" bezelStyle="recessed" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QQa-k6-RWZ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="systemBold" size="12"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="autoUpdateQuestionButtonAction:" target="6HZ-ko-cfY" id="AAg-yu-Jgf"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5bw-FU-IV4" firstAttribute="leading" secondItem="giQ-ov-AJ6" secondAttribute="trailing" constant="8" id="0uV-ML-pIZ"/>
+                                        <constraint firstItem="giQ-ov-AJ6" firstAttribute="centerY" secondItem="YRI-aK-1Qg" secondAttribute="centerY" id="1yo-Wy-fzM"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jna-2L-IaX" secondAttribute="trailing" constant="20" id="BMA-wi-sga"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zik-Jg-36U" secondAttribute="trailing" constant="20" id="FK4-en-X7E"/>
+                                        <constraint firstItem="PC2-8W-HDa" firstAttribute="top" secondItem="Zik-Jg-36U" secondAttribute="bottom" constant="20" id="Kfw-0U-Ir2"/>
+                                        <constraint firstItem="giQ-ov-AJ6" firstAttribute="leading" secondItem="YRI-aK-1Qg" secondAttribute="trailing" constant="8" id="Ljy-ya-Qw7"/>
+                                        <constraint firstItem="5bw-FU-IV4" firstAttribute="centerY" secondItem="giQ-ov-AJ6" secondAttribute="centerY" id="Mhl-1e-hsO"/>
+                                        <constraint firstAttribute="trailing" secondItem="PC2-8W-HDa" secondAttribute="trailing" constant="20" id="P30-0N-eYU"/>
+                                        <constraint firstItem="YRI-aK-1Qg" firstAttribute="top" secondItem="Jna-2L-IaX" secondAttribute="bottom" constant="20" id="Vvw-i9-Nsy"/>
+                                        <constraint firstItem="Irs-sZ-FjY" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="Y1u-fq-BQL"/>
+                                        <constraint firstItem="Zik-Jg-36U" firstAttribute="top" secondItem="ZMd-yk-FEh" secondAttribute="top" constant="20" id="cEI-OA-gO1"/>
+                                        <constraint firstItem="Jna-2L-IaX" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="cx6-br-tjA"/>
+                                        <constraint firstItem="Irs-sZ-FjY" firstAttribute="top" secondItem="YRI-aK-1Qg" secondAttribute="bottom" constant="20" id="fZ1-ER-4ek"/>
+                                        <constraint firstItem="PC2-8W-HDa" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="gur-n9-Npm"/>
+                                        <constraint firstItem="YRI-aK-1Qg" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="hbd-I5-BXB"/>
+                                        <constraint firstItem="6Cw-6Z-6Vc" firstAttribute="centerY" secondItem="Irs-sZ-FjY" secondAttribute="centerY" id="k5k-52-3OZ"/>
+                                        <constraint firstItem="Jna-2L-IaX" firstAttribute="top" secondItem="PC2-8W-HDa" secondAttribute="bottom" constant="20" id="nTB-GQ-qj9"/>
+                                        <constraint firstItem="Zik-Jg-36U" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="q3W-wx-Xd6"/>
+                                        <constraint firstItem="6Cw-6Z-6Vc" firstAttribute="leading" secondItem="Irs-sZ-FjY" secondAttribute="trailing" constant="8" id="ype-16-Fu2"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Jev-PT-Dl9"/>
+                                    <constraint firstAttribute="width" constant="380" id="cFx-Iw-D6C"/>
+                                </constraints>
+                            </box>
+                            <box title="Hotkeys" translatesAutoresizingMaskIntoConstraints="NO" id="upa-ic-wax">
+                                <rect key="frame" x="17" y="16" width="386" height="198"/>
+                                <view key="contentView" id="0pN-YH-XA1">
+                                    <rect key="frame" x="3" y="3" width="380" height="180"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fz9-2P-jMp">
+                                            <rect key="frame" x="18" y="108" width="93" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Global Hotkey:" id="ESf-R9-hEr">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="qXm-ey-JFz" customClass="HotkeyRecorder" customModule="DevUtils2" customModuleProvider="target">
+                                            <rect key="frame" x="119" y="106" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="F0i-Ym-TYS"/>
+                                                <constraint firstAttribute="width" constant="150" id="gPA-R6-50F"/>
+                                            </constraints>
+                                        </customView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CKy-dg-u3b">
+                                            <rect key="frame" x="18" y="144" width="100" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Service Hotkey:" id="zar-hG-lj9">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-gG-oih">
+                                            <rect key="frame" x="118" y="135" width="115" height="32"/>
+                                            <buttonCell key="cell" type="push" title="What's this?" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gfr-Tu-g37">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="serviceHotKeyExplainButtonAction:" target="6HZ-ko-cfY" id="bWs-hq-1sC"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PxH-fG-gg9">
+                                            <rect key="frame" x="18" y="72" width="333" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Auto use clipboard content as input when activated" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uMo-dr-z48">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="automaticClipboardCheckboxAction:" target="6HZ-ko-cfY" id="z8M-EV-jWU"/>
+                                                <binding destination="r98-Ge-maq" name="value" keyPath="values.auto-use-clipboard-content-when-activate" id="P6G-Xa-Ve8"/>
+                                            </connections>
+                                        </button>
+                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="nVG-Tl-vTr">
+                                            <rect key="frame" x="40" y="20" width="320" height="44"/>
+                                            <view key="contentView" id="0H8-cz-hpp">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ErQ-9y-yPb">
+                                                        <rect key="frame" x="-2" y="28" width="126" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="by Global Hotkey" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="R6O-ga-Wkh">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                            <connections>
+                                                                <binding destination="r98-Ge-maq" name="value" keyPath="values.auto-clipboard-global-hotkey" id="LuR-cL-hUe"/>
+                                                            </connections>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hcn-i2-7By">
+                                                        <rect key="frame" x="-2" y="6" width="198" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="by clicking to Status Bar Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nqN-Yf-xNW">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <binding destination="r98-Ge-maq" name="value" keyPath="values.auto-clipboard-status-bar-icon" id="UVt-Ea-e1x"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="hcn-i2-7By" secondAttribute="bottom" constant="8" id="DkY-Ii-dHj"/>
+                                                    <constraint firstItem="ErQ-9y-yPb" firstAttribute="top" secondItem="0H8-cz-hpp" secondAttribute="top" id="VVo-S2-UGv"/>
+                                                    <constraint firstItem="ErQ-9y-yPb" firstAttribute="leading" secondItem="0H8-cz-hpp" secondAttribute="leading" id="cNT-O7-jDE"/>
+                                                    <constraint firstItem="hcn-i2-7By" firstAttribute="top" secondItem="ErQ-9y-yPb" secondAttribute="bottom" constant="8" id="cSx-KM-Gqt"/>
+                                                    <constraint firstItem="hcn-i2-7By" firstAttribute="leading" secondItem="0H8-cz-hpp" secondAttribute="leading" id="mQ3-2H-212"/>
+                                                </constraints>
+                                            </view>
+                                            <connections>
+                                                <binding destination="r98-Ge-maq" name="hidden" keyPath="values.auto-use-clipboard-content-when-activate" id="xiY-6d-iq3">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </box>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PxH-fG-gg9" firstAttribute="top" secondItem="fz9-2P-jMp" secondAttribute="bottom" constant="20" id="1RO-If-QIp"/>
+                                        <constraint firstItem="nVG-Tl-vTr" firstAttribute="leading" secondItem="0pN-YH-XA1" secondAttribute="leading" constant="40" id="3hU-hf-tLP"/>
+                                        <constraint firstItem="CKy-dg-u3b" firstAttribute="top" secondItem="0pN-YH-XA1" secondAttribute="top" constant="20" id="4aH-DB-xcI"/>
+                                        <constraint firstAttribute="trailing" secondItem="nVG-Tl-vTr" secondAttribute="trailing" constant="20" id="5Qv-oE-AXF"/>
+                                        <constraint firstItem="fz9-2P-jMp" firstAttribute="leading" secondItem="0pN-YH-XA1" secondAttribute="leading" constant="20" id="G5n-OM-7oq"/>
+                                        <constraint firstItem="nVG-Tl-vTr" firstAttribute="top" secondItem="PxH-fG-gg9" secondAttribute="bottom" constant="10" id="KAr-mc-SHI"/>
+                                        <constraint firstItem="TkE-gG-oih" firstAttribute="centerY" secondItem="CKy-dg-u3b" secondAttribute="centerY" id="LCO-HE-hwo"/>
+                                        <constraint firstItem="PxH-fG-gg9" firstAttribute="leading" secondItem="0pN-YH-XA1" secondAttribute="leading" constant="20" id="Pne-ZX-nKI"/>
+                                        <constraint firstItem="CKy-dg-u3b" firstAttribute="leading" secondItem="0pN-YH-XA1" secondAttribute="leading" constant="20" id="QNP-qo-pVO"/>
+                                        <constraint firstItem="qXm-ey-JFz" firstAttribute="centerY" secondItem="fz9-2P-jMp" secondAttribute="centerY" id="Qpj-hw-4Gf"/>
+                                        <constraint firstItem="qXm-ey-JFz" firstAttribute="leading" secondItem="fz9-2P-jMp" secondAttribute="trailing" constant="10" id="hJk-EH-l2a"/>
+                                        <constraint firstItem="TkE-gG-oih" firstAttribute="leading" secondItem="CKy-dg-u3b" secondAttribute="trailing" constant="8" id="oCu-P1-I9n"/>
+                                        <constraint firstAttribute="bottom" secondItem="nVG-Tl-vTr" secondAttribute="bottom" constant="20" id="oun-1w-1EH"/>
+                                        <constraint firstItem="fz9-2P-jMp" firstAttribute="top" secondItem="CKy-dg-u3b" secondAttribute="bottom" constant="20" id="wpc-wG-Dg3"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="380" id="qEc-ET-Yd9"/>
+                                </constraints>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Cuw-FZ-7s3" firstAttribute="top" secondItem="N7o-5c-FHd" secondAttribute="top" constant="20" id="6e9-C2-5cn"/>
+                            <constraint firstItem="Cuw-FZ-7s3" firstAttribute="leading" secondItem="N7o-5c-FHd" secondAttribute="leading" constant="20" id="CHc-p8-lft"/>
+                            <constraint firstAttribute="trailing" secondItem="Cuw-FZ-7s3" secondAttribute="trailing" constant="20" id="Ci9-yI-QLw"/>
+                            <constraint firstAttribute="trailing" secondItem="upa-ic-wax" secondAttribute="trailing" constant="20" id="CxV-qm-iSf"/>
+                            <constraint firstAttribute="trailing" secondItem="upa-ic-wax" secondAttribute="trailing" constant="20" id="ccg-cd-KHZ"/>
+                            <constraint firstItem="upa-ic-wax" firstAttribute="top" secondItem="Cuw-FZ-7s3" secondAttribute="bottom" constant="20" id="dBA-3V-Wfk"/>
+                            <constraint firstAttribute="bottom" secondItem="upa-ic-wax" secondAttribute="bottom" constant="20" id="rtB-gR-YJp"/>
+                            <constraint firstItem="upa-ic-wax" firstAttribute="leading" secondItem="N7o-5c-FHd" secondAttribute="leading" constant="20" id="y2v-gf-E3o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="autoUpdateCheckbox" destination="YRI-aK-1Qg" id="I5N-Yc-RLT"/>
+                        <outlet property="autoUpdateIntervalButton" destination="giQ-ov-AJ6" id="uto-dC-gV6"/>
+                        <outlet property="autoUpdateQuestionButton" destination="5bw-FU-IV4" id="WEW-wd-ShW"/>
+                        <outlet property="automaticClipboardCheckbox" destination="PxH-fG-gg9" id="aeZ-3W-soB"/>
+                        <outlet property="hotkeyRecorder" destination="qXm-ey-JFz" id="ZIp-5M-Nvt"/>
+                        <outlet property="launchAtLoginCheckbox" destination="Zik-Jg-36U" id="Mnd-ic-w6B"/>
+                        <outlet property="showDockIconCheckbox" destination="PC2-8W-HDa" id="0RK-zA-poP"/>
+                        <outlet property="showStatusIconCheckbox" destination="Jna-2L-IaX" id="BfH-q4-xDE"/>
+                        <outlet property="writeDebugLogCheckbox" destination="ZMd-yk-FEh" id="94G-hD-uVG"/>
+                        <outlet property="writeDebugLogsCheckbox" destination="Irs-sZ-FjY" id="hGo-Fs-4wj"/>
+                    </connections>
+                </viewController>
+                <customObject id="Lqy-Nm-mvo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="r98-Ge-maq"/>
+                <customObject id="emr-Ku-gbi" customClass="SUUpdater"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="476.5"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="JSONFormatterSettingViewController" customModule="DevUtils2" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="109"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kc-Zh-Wcf">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="109"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o6I-SS-98Z">
+                            <rect key="frame" x="18" y="73" width="258" height="18"/>
+                            <buttonCell key="cell" type="check" title="Auto detect when input is a valid JSON" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="jzk-y7-bUJ">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <binding destination="pi6-tq-se1" name="value" keyPath="values.json-formatter-auto-activate-valid-json" id="21R-az-mr2"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AP6-Mn-Y4y">
+                            <rect key="frame" x="18" y="49" width="300" height="18"/>
+                            <buttonCell key="cell" type="check" title="Allow trailing commas and comments in JSON" bezelStyle="regularSquare" imagePosition="left" inset="2" id="faH-qB-zNC">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <binding destination="pi6-tq-se1" name="value" keyPath="values.json-formatter-allow-trailing-commas-comments" id="JXh-WN-9Lm"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0GE-v0-2ih">
+                            <rect key="frame" x="14" y="13" width="144" height="32"/>
+                            <buttonCell key="cell" type="push" title="Reset to Defaults" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jmF-uh-C0G">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="resetButtonAction:" target="-2" id="UIP-ee-3hM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <edgeInsets key="edgeInsets" left="20" right="20" top="20" bottom="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="uKG-E4-emk"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="7kc-Zh-Wcf" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="FZn-cq-AqL"/>
+                <constraint firstItem="7kc-Zh-Wcf" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="HzN-Td-6Jj"/>
+                <constraint firstAttribute="bottom" secondItem="7kc-Zh-Wcf" secondAttribute="bottom" id="hqq-ZA-Am3"/>
+                <constraint firstAttribute="trailing" secondItem="7kc-Zh-Wcf" secondAttribute="trailing" id="iwv-sY-RtI"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="154"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="pi6-tq-se1"/>
+    </objects>
+</document>

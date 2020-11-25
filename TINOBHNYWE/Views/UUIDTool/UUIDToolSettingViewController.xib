@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UUIDToolSettingViewController" customModule="DevUtils2Tests" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="95"/>
+            <subviews>
+                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nt3-pl-vap">
+                    <rect key="frame" x="18" y="59" width="282" height="18"/>
+                    <buttonCell key="cell" type="check" title="Auto detect when input is a valid UUID" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oAM-df-hTx">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="optionAction:" target="-2" id="FVD-9P-siH"/>
+                        <binding destination="gOe-Ts-x9U" name="value" keyPath="values.uuid-tool-auto-detect-input-valid" id="rbK-x5-7AN"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ypl-rD-8cz">
+                    <rect key="frame" x="14" y="13" width="144" height="32"/>
+                    <buttonCell key="cell" type="push" title="Reset to Defaults" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DR0-Ut-gCL">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="resetButtonAction:" target="-2" id="VSw-s9-xb3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="nt3-pl-vap" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="JA8-mx-g4W"/>
+                <constraint firstItem="Ypl-rD-8cz" firstAttribute="top" secondItem="nt3-pl-vap" secondAttribute="bottom" constant="20" id="Sr4-7A-8U2"/>
+                <constraint firstItem="nt3-pl-vap" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="dOR-fN-aWa"/>
+                <constraint firstAttribute="trailing" secondItem="nt3-pl-vap" secondAttribute="trailing" constant="20" id="efb-tq-mPd"/>
+                <constraint firstAttribute="bottom" secondItem="Ypl-rD-8cz" secondAttribute="bottom" constant="20" id="rCj-im-fw4"/>
+                <constraint firstItem="Ypl-rD-8cz" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="rED-fF-izG"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="36.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="gOe-Ts-x9U"/>
+    </objects>
+</document>

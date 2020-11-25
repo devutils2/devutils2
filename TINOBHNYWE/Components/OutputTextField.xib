@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="OutputTextField" customModule="DevUtils2" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="c22-O7-iKe" id="x7d-4j-wry"/>
+                <outlet property="copyButton" destination="8TR-ad-pht" id="0KS-M7-Hcp"/>
+                <outlet property="textField" destination="5TL-ae-QkG" id="uY9-xA-qbj"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="731" height="231"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5TL-ae-QkG">
+                    <rect key="frame" x="0.0" y="105" width="699" height="21"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="HdG-oi-vqN">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Copy to clipboard" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vfT-am-BC3">
+                    <rect key="frame" x="701" y="98" width="36" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="Wxw-OP-w5I"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="doc.on.doc.fill" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="8TR-ad-pht">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="copyButtonAction:" target="-2" id="4Qa-9I-Eus"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vfT-am-BC3" firstAttribute="leading" secondItem="5TL-ae-QkG" secondAttribute="trailing" constant="8" id="XS6-XG-04n"/>
+                <constraint firstItem="vfT-am-BC3" firstAttribute="baseline" secondItem="5TL-ae-QkG" secondAttribute="baseline" id="ZNV-8o-1WG"/>
+                <constraint firstAttribute="trailing" secondItem="vfT-am-BC3" secondAttribute="trailing" id="cFh-Qr-g84"/>
+                <constraint firstItem="5TL-ae-QkG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="xiU-Yu-cqY"/>
+                <constraint firstItem="5TL-ae-QkG" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="yza-4E-YQs"/>
+            </constraints>
+            <point key="canvasLocation" x="313.5" y="138.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="doc.on.doc.fill" width="56" height="79"/>
+    </resources>
+</document>
